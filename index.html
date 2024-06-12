@@ -3,17 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CebuLife</title>
+    <!-- reset.css modern-css-reset -->
+    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css"/>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <header>
-        <h1>セブ留学</h1>
+        <div class="header-title">
+            <div class="logo">
+                <img src="img/logo_mark.jpg" alt="ロゴマーク" width="150px">
+            </div>
+            <h1>Cebu Life</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="">About me</a></li>
+                <li><a href="">School</a></li>
+                <li><a href="">Life</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
     </header>
+    <div class="main_hero">
+        <img src="img/hero_image.jpg" alt="水族館を見上げる自分" width="100%" >
+    </div>
     <main>
-        <p>あああ</p>
+        <div class="phrasebox">
+            <h1 class="catchphrase">自分に必要なものを追い求めて</h1>
+            <p>将来が五里霧中で悩んでいた私は、その状況を打破するためにセブへ向かうことにしました</p>
+        </div>
+        <div class="sub_hero">
+            <div>
+                <img src="img/sub_image.jpg" alt="橋を渡る女性" width="23%" height="500px">
+            </div>
+            <div>
+                <img src="img/sub_image2.jpg" alt="パンダノン島での集合写真" width="60%" height="500px">
+            </div>
+        </div>
+        <section class="merit">
+            <h2>セブ留学のメリット</h2>
+            <ol class="merit_box">
+                <li class="merit_list">
+                    費用が安い
+                    <img src="./img/merit1.jpg" alt="お金" width="300px">
+                </li>
+                <li class="merit_list">
+                    勉強と観光を両方楽しめる
+                    <img src="./img/merit2.jpg" alt="勉強" width="300px">
+                </li>
+                <li class="merit_list">
+                    リゾート地でのリフレッシュ
+                    <img src="./img/merit3.jpg" alt="ダンス" width="300px">
+                </li>
+            </ol>
+        </section>
+        <section class="news">
+            <h2>News</h2>
+        <div class="topnews">
+            <dl>
+                <dt>
+                    2023.10.14
+                <span>お知らせ</span>
+                </dt>
+                <dd>
+                    成田からセブへ直行 
+                </dd>
+                <dt>
+                    2023.11.1
+                <span>お知らせ</span>
+                </dt>
+                <dd>
+                    アイランドホッピングへ行きました。  
+                </dd>
+                <dt>
+                    2023.12.2
+                <span>お知らせ</span>
+                </dt>
+                <dd>
+                    アプリ制作発表会前夜祭🍺     
+                </dd>
+            </dl>
+        </div>
+        </section>
+        <section class="contact">
+            <button><a href="" class="form_button">googleフォームへお問い合わせ</a></button>
+        </section>
     </main>
     <footer>
-
+        <button>ページトップへ</button>
+        <div class="footer-title">
+            <div class="logo">
+                <img src="img/logo_mark.jpg" alt="ロゴマーク" width="150px">
+            </div>
+            <h1>Cebu Life</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="">About me</a></li>
+                <li><a href="">School</a></li>
+                <li><a href="">Life</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
+        <small>Cebu Life_2023-2024©︎ all rights reserved</small>
     </footer>
 </body>
 </html>
