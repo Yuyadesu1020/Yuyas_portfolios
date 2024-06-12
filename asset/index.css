@@ -1,0 +1,31 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+header .header-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .logo {
+  padding: 20px 20px;
+}
+header .logo img {
+  border: 1px solid black;
+  border-radius: 50%;
+}
+header nav {
+  padding: 20px 20px 20px 0;
+}
+header nav ul {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+header nav ul a {
+  text-decoration: none;
+  font-size: 23px;
+}/*# sourceMappingURL=index.css.map */
