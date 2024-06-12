@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body, html {
   margin: 0;
   padding: 0;
@@ -8,30 +9,102 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: start;
+  position: relative;
+  z-index: 10;
+  padding-top: 50px;
 }
 header .header-title {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-header .logo {
+header .header-title .logo {
   padding: 20px 20px;
 }
-header .logo img {
+header .header-title .logo img {
   border: 1px solid black;
   border-radius: 50%;
 }
+header .header-title h1 {
+  font-size: 40px;
+}
+header .header-title h1::after {
+  content: "冒険をここから始める";
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+}
 header nav {
-  padding: 20px 20px 20px 0;
+  padding: 0 60px 20px 0;
 }
 header nav ul {
   padding: 0;
   list-style-type: none;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
-header nav ul a {
+header nav ul li a {
   text-decoration: none;
-  font-size: 23px;
+  font-size: 30px;
+  color: black;
+}
+
+.main_hero {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  top: 0;
+}
+.main_hero::after {
+  content: "";
+  position: absolute;
+  top: -90px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 -28px 15px #ffffff; /* 下に白い影を付ける */
+}
+.main_hero img {
+  height: 90vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+main {
+  margin-top: 460px;
+}
+main .phrasebox {
+  text-align: center;
+  line-height: 60px;
+  margin-bottom: 40px;
+}
+main .phrasebox .catchphrase {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+main .explanation {
+  font-size: 14px;
+}
+main .sub_hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  gap: 50px;
+  margin-bottom: 150px;
+}
+main .sub_hero .sub1 {
+  width: 380px;
+  height: 480px;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+main .sub_hero .sub2 {
+  width: 800px;
+  height: 480px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=index.css.map */
