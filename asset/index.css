@@ -1,7 +1,7 @@
 @charset "UTF-8";
-body, html {
+body {
   margin: 0;
-  padding: 0;
+  width: 100%;
   height: 100%;
 }
 
@@ -80,11 +80,26 @@ main {
 main .phrasebox {
   text-align: center;
   line-height: 60px;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 main .phrasebox .catchphrase {
   font-size: 40px;
   margin-bottom: 30px;
+}
+main .phrasebox a {
+  background-color: black;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #fff;
+  width: 400px;
+  display: inline-block;
+  text-align: center;
+  transition: all ease 0.3s;
+}
+main .phrasebox a:hover {
+  background-color: #fff;
+  border: 1px solid black;
+  color: black;
 }
 main .explanation {
   font-size: 14px;
@@ -93,18 +108,48 @@ main .sub_hero {
   display: flex;
   flex-direction: row;
   justify-content: right;
-  gap: 50px;
-  margin-bottom: 150px;
+  gap: 80px;
 }
-main .sub_hero .sub1 {
-  width: 380px;
-  height: 480px;
-  -o-object-fit: fill;
-     object-fit: fill;
-}
-main .sub_hero .sub2 {
-  width: 800px;
+main .sub_hero div .sub1 {
+  width: 320px;
   height: 480px;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: left;
+     object-position: left;
+}
+main .sub_hero div .sub2 {
+  width: 950px;
+  height: 480px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.merit {
+  text-align: center;
+  margin-top: 150px;
+}
+.merit h2 {
+  font-size: 32px;
+}
+.merit div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  padding-left: 0;
+}
+.merit div p {
+  margin-top: 120px;
+  height: 300px;
+  font-size: 27px;
+}
+.merit div p img {
+  margin-top: 120px;
+}
+
+.news {
+  text-align: center;
+  margin-top: 270px;
 }/*# sourceMappingURL=index.css.map */

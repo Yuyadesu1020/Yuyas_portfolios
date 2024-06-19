@@ -1,6 +1,6 @@
-body, html {
+body{
     margin: 0;
-    padding: 0;
+    width: 100%;
     height: 100%;
 }
 
@@ -13,6 +13,23 @@ $text-color: black;
 
 
 // @mixin
+@mixin button1{
+    a{
+        background-color: black;
+        border-radius: 20px;
+        text-decoration: none;
+        color: #fff;
+        width: 400px;
+        display: inline-block;
+        text-align: center;
+        transition: all ease 0.3s;
+        &:hover{
+            background-color: #fff;
+            border: 1px solid black;
+            color: $text-color;
+        }
+    }
+}
 
 @mixin navigation{
     ul{
@@ -95,34 +112,64 @@ main{
     .phrasebox{
         text-align: center;
         line-height: 60px;
-        margin-bottom: 40px;
+        margin-bottom: 80px;
         .catchphrase{
             font-size: 40px;
             margin-bottom: 30px;
         }
+        @include button1;
     }
 
     .explanation{
         font-size: 14px;
     }
-
     .sub_hero{
         display: flex;
         flex-direction: row;
         justify-content: right;
-        gap: 50px;
-        margin-bottom: 150px;
-        .sub1{
-            width: 380px;
-            height: 480px;
-            object-fit: fill;
-        }
-        .sub2{
-            width: 800px;
-            height: 480px;
-            object-fit: cover;
+        gap: 80px;
+        div{
+            .sub1{
+                width: 320px;
+                height: 480px;
+                object-fit: cover;
+                object-position: left;
+            }
+            .sub2{
+                width: 950px;
+                height: 480px;
+                object-fit: cover;
+            }
         }
     }
 }
 
+.merit{
+    text-align: center;
+    margin-top: 150px;
+    h2{
+        font-size: 32px;
+    }
+    div{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 100px;
+        padding-left: 0;
+        p{
+            margin-top: 120px;
+            height: 300px;
+            font-size: 27px;
+            img{
+                margin-top: 120px;
+            }
+        }
+    }
+}
+
+.news{
+    text-align: center;
+    margin-top: 270px;
+}
 
