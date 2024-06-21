@@ -5,6 +5,16 @@ body {
   height: 100%;
 }
 
+p, .contact .content a, a {
+  font-size: 20px;
+  color: black;
+  text-decoration: none;
+}
+
+div, section {
+  background-color: #fff;
+}
+
 header {
   display: flex;
   flex-direction: row;
@@ -18,37 +28,133 @@ header .header-title {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(255, 255, 255, 0);
 }
 header .header-title .logo {
   padding: 20px 20px;
+  background-color: rgba(255, 255, 255, 0);
 }
 header .header-title .logo img {
   border: 1px solid black;
   border-radius: 50%;
 }
 header .header-title h1 {
-  font-size: 40px;
+  font-size: 90px;
 }
 header .header-title h1::after {
   content: "冒険をここから始める";
   display: flex;
   flex-direction: column;
   font-size: 30px;
+  font-family: "ヒラギノ角ゴ ProN";
 }
 header nav {
   padding: 0 60px 20px 0;
-}
-header nav ul {
-  padding: 0;
-  list-style-type: none;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+}
+header nav ul {
+  list-style-type: none;
 }
 header nav ul li a {
   text-decoration: none;
   font-size: 30px;
-  color: black;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+header nav ul li a span {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateX(-50%);
+  opacity: 1;
+  white-space: nowrap;
+}
+header nav ul li a span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-50%) translateY(100%);
+}
+header nav ul li a:hover span:nth-child(1) {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-100%);
+}
+header nav ul li a:hover span:nth-child(2) {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0%);
+}
+header nav li {
+  padding: 50px 40px;
+}
+header nav li a {
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.fixed-header {
+  justify-content: space-around;
+  position: fixed;
+  top: -150px;
+  left: 0;
+  width: 100%;
+  height: 15vh;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 10px 0;
+  text-align: center;
+  z-index: 1000;
+  transition: top 0.8s ease;
+}
+.fixed-header.active {
+  top: 0;
+}
+.fixed-header .fixed-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.fixed-header nav ul {
+  list-style-type: none;
+}
+.fixed-header nav ul li a {
+  text-decoration: none;
+  font-size: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.fixed-header nav ul li a span {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateX(-50%);
+  opacity: 1;
+  white-space: nowrap;
+}
+.fixed-header nav ul li a span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-50%) translateY(100%);
+}
+.fixed-header nav ul li a:hover span:nth-child(1) {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-100%);
+}
+.fixed-header nav ul li a:hover span:nth-child(2) {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0%);
+}
+.fixed-header nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 55px;
+}
+.fixed-header nav ul li a {
+  color: #000000;
+  font-size: 25px;
 }
 
 .main_hero {
@@ -61,17 +167,19 @@ header nav ul li a {
 .main_hero::after {
   content: "";
   position: absolute;
-  top: -90px;
+  top: -30px;
   left: 0;
   width: 100%;
   height: 100%;
-  box-shadow: inset 0 -28px 15px #ffffff; /* 下に白い影を付ける */
+  box-shadow: inset 0 -60px 40px rgb(255, 255, 255);
 }
 .main_hero img {
-  height: 90vh;
+  height: 95vh;
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
+  transition: transform 2s ease, opacity 2s ease;
+  z-index: -10;
 }
 
 main {
@@ -80,29 +188,56 @@ main {
 main .phrasebox {
   text-align: center;
   line-height: 60px;
-  margin-bottom: 80px;
+  padding: 50px 0 80px 0;
 }
 main .phrasebox .catchphrase {
-  font-size: 40px;
+  font-size: 50px;
   margin-bottom: 30px;
 }
-main .phrasebox a {
-  background-color: black;
-  border-radius: 20px;
+main .phrasebox .btn1 {
+  /* アニメーションの起点とするためrelativeを指定 */
+  position: relative;
+  overflow: hidden;
+  /* ボタンの形状 */
   text-decoration: none;
-  color: #fff;
-  width: 400px;
   display: inline-block;
+  border: 1px solid #555; /* ボーダーの色と太さ */
+  border-radius: 30px;
+  padding: 5px 60px;
   text-align: center;
-  transition: all ease 0.3s;
+  outline: none;
+  /* アニメーションの指定 */
+  transition: ease 0.2s;
+  /* 背景が流れる（上から下） */
 }
-main .phrasebox a:hover {
-  background-color: #fff;
-  border: 1px solid black;
-  color: black;
+main .phrasebox .btn1 span {
+  position: relative;
+  z-index: 3; /* z-indexの数値をあげて文字を背景よりも手前に表示 */
+  color: #333;
+}
+main .phrasebox .btn1:hover span {
+  color: #fff;
+}
+main .phrasebox .btn1:hover.bgtop:before {
+  height: 100%;
+  background-color: #333;
+}
+main .phrasebox .btn1.bgtop:before {
+  content: "";
+  /* 絶対配置で位置を指定 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  /* 色や形状 */
+  background: #333; /* 背景色 */
+  width: 100%;
+  height: 0;
+  /* アニメーション */
+  transition: 0.3s cubic-bezier(0.8, 0, 0.2, 1) 0s;
 }
 main .explanation {
-  font-size: 14px;
+  margin-bottom: 30px;
 }
 main .sub_hero {
   display: flex;
@@ -127,10 +262,11 @@ main .sub_hero div .sub2 {
 
 .merit {
   text-align: center;
-  margin-top: 150px;
+  padding-top: 150px;
 }
 .merit h2 {
-  font-size: 32px;
+  font-size: 50px;
+  margin-bottom: 80px;
 }
 .merit div {
   display: flex;
@@ -140,16 +276,228 @@ main .sub_hero div .sub2 {
   gap: 100px;
   padding-left: 0;
 }
-.merit div p {
-  margin-top: 120px;
+.merit div p, .merit div .contact .content a, .contact .content .merit div a {
   height: 300px;
   font-size: 27px;
 }
-.merit div p img {
+.merit div p img, .merit div .contact .content a img, .contact .content .merit div a img {
   margin-top: 120px;
 }
 
 .news {
+  padding-top: 230px;
   text-align: center;
-  margin-top: 270px;
+}
+.news h2 {
+  font-size: 50px;
+  margin-bottom: 80px;
+}
+.news div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.news div .first_row {
+  border-top: 1px solid #ccc;
+}
+.news div dl {
+  width: 80vw;
+  text-align: left;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  border-bottom: 1px solid #ccc;
+}
+.news div dl span {
+  padding: 10px 25px;
+  margin-left: 20px;
+  background-color: #00C09B;
+}
+.news div dl a {
+  text-decoration: none;
+}
+
+.photo {
+  padding-top: 100px;
+}
+.photo h2 {
+  font-size: 50px;
+  margin-bottom: 80px;
+}
+.photo .zoom-contents {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.photo .zoom-contents .banner, .photo .zoom-contents .banner3, .photo .zoom-contents .banner2 {
+  overflow: hidden;
+  position: relative;
+  width: 500px;
+  height: 280px;
+}
+.photo .zoom-contents .banner:after, .photo .zoom-contents .banner3:after, .photo .zoom-contents .banner2:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url("../img/photo1.jpg") no-repeat center center;
+  background-size: cover;
+  transition: transform 0.8s ease;
+}
+.photo .zoom-contents .banner:hover:after, .photo .zoom-contents .banner3:hover:after, .photo .zoom-contents .banner2:hover:after {
+  transform: scale(1.1);
+}
+.photo .zoom-contents .banner2:after {
+  background: url("../img/photo2.jpg") no-repeat center center;
+  background-size: cover;
+}
+.photo .zoom-contents .banner3:after {
+  background: url("../img/photo3.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.contact {
+  margin-top: 100px;
+  text-align: center;
+  height: 50vh;
+  position: relative;
+}
+.contact img {
+  width: 100%;
+  height: 50vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 40%;
+     object-position: 50% 40%;
+}
+.contact .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0);
+  z-index: 100;
+}
+.contact .content p, .contact .content a {
+  font-size: 25px;
+  color: #fff;
+  margin: 40px 0;
+}
+.contact .content a {
+  padding: 20px 80px;
+  border: 1px solid #fff;
+  border-radius: 40px;
+  transition: background-color 0.4s ease;
+}
+.contact .content a:hover {
+  background-color: #00C09B;
+}
+
+footer {
+  padding-top: 50px;
+}
+footer .pagetop {
+  border-radius: 80%;
+  background-color: rgba(58, 227, 194, 0.5);
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  top: 73%;
+  right: 3%;
+  cursor: pointer;
+  border: none;
+  font-size: 15px;
+}
+footer .scroll {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+footer .scroll:hover {
+  transform: scale(1.1);
+  background-color: #00C09B;
+}
+footer .scroll:active {
+  transform: translateY(20px);
+}
+footer .scroll.visible {
+  opacity: 1;
+}
+footer .scroll .go-top {
+  font-size: 35px;
+  color: black;
+  padding-left: 24px;
+  line-height: 70px;
+}
+footer .footer-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+footer .footer-title .logo {
+  padding: 20px 20px;
+  background-color: rgba(255, 255, 255, 0);
+}
+footer .footer-title .logo img {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+footer .footer-title h1 {
+  font-size: 30px;
+}
+footer .footer-title h1::after {
+  content: "冒険をここから始める";
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+footer nav ul {
+  list-style-type: none;
+}
+footer nav ul li a {
+  text-decoration: none;
+  font-size: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+footer nav ul li a span {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateX(-50%);
+  opacity: 1;
+  white-space: nowrap;
+}
+footer nav ul li a span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-50%) translateY(100%);
+}
+footer nav ul li a:hover span:nth-child(1) {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-100%);
+}
+footer nav ul li a:hover span:nth-child(2) {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0%);
+}
+footer nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  gap: 100px;
+  padding-bottom: 30px;
+}
+footer nav ul li a {
+  font-size: 18px;
+}
+footer .copyright {
+  text-align: center;
+  padding: 20px 0;
 }/*# sourceMappingURL=index.css.map */

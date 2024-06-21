@@ -7,6 +7,7 @@
     <!-- reset.css modern-css-reset -->
     <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css"/>
     <link rel="stylesheet" href="asset/index.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.0/css/all.css">
 </head>
 <body>
     <header>
@@ -18,24 +19,41 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="">About me</a></li>
-                <li><a href="">School</a></li>
-                <li><a href="">Life</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="#"><span>Home</span><span>ホーム</span></a></li>
+                <li><a href=""><span>About</span><span>私について</span></a></li>
+                <li><a href=""><span>School</span><span>学校</span></a></li>
+                <li><a href=""><span>Life</span><span>日常生活</span></a></li>
+                <li><a href=""><span>Contact</span><span>お問い合わせ</span></a></li>
+            </ul>
+        </nav>
+    </header>
+    <header class="fixed-header" id="fixed-header">
+        <div class="fixed-title">
+            <div class="fixed-logo">
+                <img src="img/logo_mark.jpg" alt="ロゴマーク" width="130px" height="130px">
+            </div>
+            <h1>Cebu Life</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#"><span>Home</span><span>ホーム</span></a></li>
+                <li><a href=""><span>About</span><span>私について</span></a></li>
+                <li><a href=""><span>School</span><span>学校</span></a></li>
+                <li><a href=""><span>Life</span><span>日常生活</span></a></li>
+                <li><a href=""><span>Contact</span><span>お問い合わせ</span></a></li>
             </ul>
         </nav>
     </header>
     <div class="main_hero">
-        <img src="img/hero_image.jpg" alt="水族館を見上げる自分" width="100%" >
+        <img src="img/hero_image.jpg" alt="水族館を見上げる自分" width="100%" class="hero-image">
     </div>
     <main>
         <div class="phrasebox">
             <h1 class="catchphrase">自分に必要なものを追い求めて</h1>
-            <p class="explanation">将来が五里霧中で悩んでいた私は、その状況を打破する ためにセブへ向かうことに<br>
+            <p class="explanation">将来が五里霧中で悩んでいた私は、その状況を打破するためにセブへ向かうことに<br>
                そこでは、日本では体験できない新たな日常が待っていた
             </p>
-            <a href="" class="button1">more me...</a>
+            <a href="" class="btn1 bgtop"><span>more me...</span></a>
         </div>
         <div class="sub_hero">
             <div>
@@ -64,43 +82,63 @@
         </section>
         <section class="news">
             <h2>News</h2>
-        <div class="topnews">
-            <dl>
+        <div>
+            <dl class="first_row">
                 <dt>
                     2023.10.14
                 <span>お知らせ</span>
                 </dt>
-                <dd>
-                    成田からセブへ直行 
-                </dd>
+                <a href="#">
+                    出発の朝！成田からセブへ 
+                </a>
+            </dl>
+            <dl>
                 <dt>
                     2023.11.1
                 <span>お知らせ</span>
                 </dt>
-                <dd>
+                <a href="#">
                     アイランドホッピングへ行きました。  
-                </dd>
+                </a>
+            </dl>
+            <dl>
                 <dt>
                     2023.12.2
                 <span>お知らせ</span>
                 </dt>
-                <dd>
+                <a href="#">
                     アプリ制作発表会前夜祭🍺     
-                </dd>
+                </a>
             </dl>
         </div>
         </section>
-        <section class="cut-area">
-            <!-- 背景画像を見れるようにする -->
+        <section class="photo">
+            <!-- スクロール拡大 -->
+            <div class="zoom-contents">
+                <div class="banner">
+                    
+                </div>
+                <div class="banner2">
+                    
+                </div>
+                <div class="banner3">
+                    
+                </div>
+            </div>
         </section>
+
         <section class="contact">
-            <button>
-                <a href="" class="button2">googleフォームへお問い合わせ</a>
-            </button>
+            <img src="img/form.png" alt="" class="form_image">
+            <div class="content">
+                <p>ご質問・ご相談などお気軽にお問い合わせください</p>
+                <a href="#" class="button2">お問い合わせする</a>
+            </div>
         </section>
+        
+
     </main>
     <footer>
-        <button class="button3">ページトップへ</button>
+        <a href="#" class="pagetop scroll" id="top"><i class="fa-solid fa-caret-up go-top"></i></a>
         <div class="footer-title">
             <div class="logo">
                 <img src="img/logo_mark.jpg" alt="ロゴマーク" width="150px">
@@ -109,14 +147,19 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="">About me</a></li>
-                <li><a href="">School</a></li>
-                <li><a href="">Life</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="#"><span>Home</span><span>ホーム</span></a></li>
+                <li><a href=""><span>About</span><span>私について</span></a></li>
+                <li><a href=""><span>School</span><span>学校</span></a></li>
+                <li><a href=""><span>Life</span><span>日常生活</span></a></li>
+                <li><a href=""><span>Contact</span><span>お問い合わせ</span></a></li>
             </ul>
         </nav>
-        <small>Cebu Life_2023-2024©︎ all rights reserved</small>
+        <div class="copyright">
+            <small>Cebu Life_2023-2024©︎ all rights reserved</small>
+        </div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
+    <script src="./asset/index.js"></script>
 </body>
 </html>
