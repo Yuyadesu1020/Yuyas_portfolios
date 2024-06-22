@@ -105,7 +105,7 @@ header nav li a {
   background-image: url(../img/fix-header.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 50% 36%;
+  background-position: 50% 35%;
   justify-content: space-around;
   position: fixed;
   top: -160px;
@@ -348,6 +348,7 @@ main .sub_hero div .sub2 {
 
 .photo {
   padding-top: 100px;
+  margin: 0 40px;
 }
 .photo h2 {
   font-size: 50px;
