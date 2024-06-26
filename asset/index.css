@@ -18,10 +18,6 @@ p, .contact .content a, a {
   text-decoration: none;
 }
 
-div, section {
-  background-color: #fff;
-}
-
 header {
   display: flex;
   flex-direction: row;
@@ -102,17 +98,14 @@ header nav li a {
 }
 
 .fixed-header {
-  background-image: url(../img/fix-header.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 35%;
+  background-color: rgba(255, 255, 255, 0);
   justify-content: space-around;
+  align-items: center;
   position: fixed;
   top: -160px;
   left: 0;
   width: 100%;
   height: 15vh;
-  background-color: #ffffff;
   color: #000000;
   padding: 10px 0;
   text-align: center;
@@ -178,7 +171,7 @@ header nav li a {
 }
 .fixed-header nav ul li a {
   color: #000000;
-  font-size: 25px;
+  font-size: 18px;
 }
 
 .main_hero {
@@ -427,6 +420,10 @@ main .sub_hero div .sub2 {
 
 footer {
   padding-top: 50px;
+  background-image: url(../img/footer_back.png);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: contain;
 }
 footer .pagetop {
   border-radius: 80%;

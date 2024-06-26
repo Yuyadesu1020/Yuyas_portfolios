@@ -3,6 +3,10 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
+  background-image: url(../img/about_header.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
 }
 
 h1, h2, h3 {
@@ -10,7 +14,7 @@ h1, h2, h3 {
   font-family: "Comic Sans MS";
 }
 
-p, a {
+p, .contact .content a, a {
   font-size: 20px;
   color: black;
   font-family: "游ゴシック体";
@@ -21,11 +25,7 @@ p, a {
 header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: start;
-  position: relative;
-  z-index: 10;
-  padding-top: 50px;
 }
 header .header-title {
   display: flex;
@@ -97,6 +97,83 @@ header nav li a {
   font-family: "Comic Sans MS";
 }
 
+.fixed-header {
+  background-color: rgba(255, 255, 255, 0);
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15vh;
+  color: #000000;
+  padding: 10px 0;
+  text-align: center;
+  z-index: 1000;
+  transition: top 0.8s ease;
+}
+.fixed-header.active {
+  top: 0;
+}
+.fixed-header .fixed-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0);
+}
+.fixed-header .fixed-title .fixed-logo {
+  padding: 20px 20px;
+  background-color: rgba(255, 255, 255, 0);
+}
+.fixed-header .fixed-title .fixed-logo img {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+.fixed-header nav ul {
+  list-style-type: none;
+}
+.fixed-header nav ul li a {
+  text-decoration: none;
+  font-size: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.fixed-header nav ul li a span {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateX(-50%);
+  opacity: 1;
+  white-space: nowrap;
+}
+.fixed-header nav ul li a span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-50%) translateY(100%);
+}
+.fixed-header nav ul li a:hover span:nth-child(1) {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-100%);
+}
+.fixed-header nav ul li a:hover span:nth-child(2) {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0%);
+}
+.fixed-header nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 55px;
+}
+.fixed-header nav ul li a {
+  color: #000000;
+  font-size: 18px;
+}
+
 main {
   margin-top: 210px;
 }
@@ -104,9 +181,115 @@ main h2 {
   font-size: 50px;
   margin-bottom: 80px;
 }
+main section {
+  margin: 0 50px;
+}
+main section .display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main section .display .title {
+  text-align: center;
+}
+main section .display .title h2 {
+  margin-bottom: 40px;
+}
+main section .display .tx-le {
+  text-align: center;
+}
+main section .display .tx-le h3 {
+  font-size: 40px;
+  color: #6d6d6d;
+}
+main section .display .info {
+  text-align: center;
+  max-width: 70vw;
+  margin: 0 auto;
+  padding-top: 60px;
+  font-size: 15px;
+  letter-spacing: 0.4em;
+  line-height: 31px;
+}
+main section .mtop80, main section .mx-width1000 {
+  max-width: 1000px;
+  margin: 80px auto 0 auto;
+}
+main section .mtop80 .display2, main section .mx-width1000 .display2 {
+  text-align: left;
+  width: 100%;
+}
+main section .mtop80 .display2 table, main section .mx-width1000 .display2 table {
+  width: 100%;
+  padding-left: 100px;
+  border-collapse: collapse;
+}
+main section .mtop80 .display2 table tbody tr th, main section .mtop80 .display2 table tbody tr td, main section .mx-width1000 .display2 table tbody tr th, main section .mx-width1000 .display2 table tbody tr td {
+  border-bottom: solid 1px #ccc;
+}
+main section .mtop80 .display2 table tbody tr th, main section .mx-width1000 .display2 table tbody tr th {
+  width: 30%;
+  padding: 20px 0;
+}
+main section .mtop80 .display2 table tbody tr td, main section .mx-width1000 .display2 table tbody tr td {
+  width: 70%;
+  padding-left: 30px;
+}
+main section .title2 {
+  padding-top: 100px;
+  text-align: center;
+}
+main section .date {
+  text-align: center;
+  background-color: rgba(0, 192, 155, 0.6);
+}
+main section .date, main section .school {
+  border-bottom: 10px solid #fff !important;
+}
+
+.contact {
+  margin-top: 100px;
+  text-align: center;
+  height: 50vh;
+  position: relative;
+}
+.contact img {
+  width: 100%;
+  height: 50vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 40%;
+     object-position: 50% 40%;
+}
+.contact .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0);
+  z-index: 100;
+}
+.contact .content p, .contact .content a {
+  font-size: 25px;
+  color: #fff;
+  margin: 40px 0;
+}
+.contact .content a {
+  padding: 20px 80px;
+  border: 1px solid #fff;
+  border-radius: 40px;
+  transition: background-color 0.4s ease;
+}
+.contact .content a:hover {
+  background-color: #00C09B;
+}
 
 footer {
   padding-top: 50px;
+  background-image: url(../img/footer_back.png);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: contain;
 }
 footer .pagetop {
   border-radius: 80%;
@@ -211,84 +394,4 @@ footer .copyright {
   text-align: center;
   padding: 20px 0;
   font-family: "Comic Sans MS";
-}
-
-.fixed-header {
-  background-image: url(../img/fix-header.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 36%;
-  justify-content: space-around;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 15vh;
-  background-color: #ffffff;
-  color: #000000;
-  padding: 10px 0;
-  text-align: center;
-  z-index: 1000;
-  transition: top 0.8s ease;
-}
-.fixed-header.active {
-  top: 0;
-}
-.fixed-header .fixed-title {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0);
-}
-.fixed-header .fixed-title .fixed-logo {
-  padding: 20px 20px;
-  background-color: rgba(255, 255, 255, 0);
-}
-.fixed-header .fixed-title .fixed-logo img {
-  border: 1px solid black;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-}
-.fixed-header nav ul {
-  list-style-type: none;
-}
-.fixed-header nav ul li a {
-  text-decoration: none;
-  font-size: 30px;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-.fixed-header nav ul li a span {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  transform: translateX(-50%);
-  opacity: 1;
-  white-space: nowrap;
-}
-.fixed-header nav ul li a span:nth-child(2) {
-  opacity: 0;
-  transform: translateX(-50%) translateY(100%);
-}
-.fixed-header nav ul li a:hover span:nth-child(1) {
-  opacity: 0;
-  transform: translateX(-50%) translateY(-100%);
-}
-.fixed-header nav ul li a:hover span:nth-child(2) {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0%);
-}
-.fixed-header nav ul {
-  display: flex;
-  flex-direction: row;
-  gap: 55px;
-}
-.fixed-header nav ul li a {
-  color: #000000;
-  font-size: 25px;
 }/*# sourceMappingURL=about.css.map */
