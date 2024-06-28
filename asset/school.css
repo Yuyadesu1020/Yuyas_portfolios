@@ -20,6 +20,8 @@ p, .contact .content a, a {
   font-family: "游ゴシック体";
   font-family: "Comic Sans MS";
   text-decoration: none;
+  line-height: 60px;
+  text-align: left;
 }
 
 header {
@@ -245,6 +247,52 @@ main section .slide-hero .slick-dots li button {
 }
 main section .slide-hero .slick-dots li.slick-active button {
   background: #333; /*ドットボタンの現在地表示の色*/
+}
+main section .row-left, main section .row-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+main section .row-left div, main section .row-right div {
+  max-width: 100%;
+  height: 100%;
+  box-shadow: 30px 30px 2px #a5fffd;
+}
+main section .row-left div img, main section .row-right div img {
+  width: 18vw;
+  height: 45vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main section .row-right {
+  margin-top: 80px;
+}
+main section .row-right div {
+  max-width: 100%;
+  height: 100%;
+}
+main section .row-right div img {
+  width: 18vw;
+  height: 45vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main section .schedule {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+main section .schedule p, main section .schedule .contact .content a, .contact .content main section .schedule a {
+  font-family: "游ゴシック体";
+  text-align: left;
+  width: 50%;
+  letter-spacing: 0.3em;
+  line-height: 45px;
+}
+main section .schedule p span, main section .schedule .contact .content a span, .contact .content main section .schedule a span {
+  font-size: 20px;
 }
 
 .contact {
