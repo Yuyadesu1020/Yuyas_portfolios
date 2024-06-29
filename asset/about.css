@@ -3,7 +3,7 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
-  background-image: url(../img/about_header.png);
+  background-image: url(../img/header_back.png);
   background-repeat: no-repeat;
   background-position: top;
   background-size: contain;
@@ -180,6 +180,12 @@ main {
 main h2 {
   font-size: 50px;
   margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+}
+main h2::after {
+  content: "個人概要";
+  font-size: 20px;
 }
 main section {
   margin: 0 50px;
@@ -191,9 +197,6 @@ main section .display {
 }
 main section .display .title {
   text-align: center;
-}
-main section .display .title h2 {
-  margin-bottom: 40px;
 }
 main section .display .tx-le {
   text-align: center;
@@ -210,6 +213,9 @@ main section .display .info {
   font-size: 15px;
   letter-spacing: 0.4em;
   line-height: 31px;
+}
+main section .title2 h2::after {
+  content: "学歴";
 }
 main section .mtop80, main section .mx-width1000 {
   max-width: 1000px;
