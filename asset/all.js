@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     //スクロールイベントを投入
     window.addEventListener('scroll', function () {
-        if (window.scrollY > 700) {
+        if (window.scrollY > 300) {
             //スクロール量が指定より以上場合、visibleクラスを追加
             scrollButton.classList.add('visible');
         } else {

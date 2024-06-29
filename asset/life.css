@@ -10,12 +10,14 @@ h1, h2, h3 {
   font-family: "Comic Sans MS";
 }
 
-p, .contact .content a, a {
+p, main .contact .content a, a {
   font-size: 20px;
   color: black;
   font-family: "游ゴシック体";
   font-family: "Comic Sans MS";
   text-decoration: none;
+  line-height: 60px;
+  text-align: left;
 }
 
 header {
@@ -98,7 +100,6 @@ header nav li a {
   background-repeat: no-repeat;
   background-position: top left;
   background-size: contain;
-  background-color: rgba(255, 255, 255, 0);
   justify-content: space-around;
   align-items: center;
   position: fixed;
@@ -176,6 +177,7 @@ header nav li a {
 
 main {
   margin-top: 210px;
+  text-align: center;
 }
 main h2 {
   font-size: 50px;
@@ -184,82 +186,80 @@ main h2 {
   flex-direction: column;
 }
 main h2::after {
-  content: "個人概要";
+  content: "日常生活";
   font-size: 20px;
 }
-main section {
-  margin: 0 50px;
+main section .display, main section .display2, main section .display3, main section .display4 {
+  margin-top: 80px;
 }
-main section .display {
+main section .display p, main section .display .contact .content a, main .contact .content section .display a, main section .display2 p, main section .display2 .contact .content a, main .contact .content section .display2 a, main section .display3 p, main section .display3 .contact .content a, main .contact .content section .display3 a, main section .display4 p, main section .display4 .contact .content a, main .contact .content section .display4 a {
+  text-align: center;
+}
+main section .display p span, main section .display .contact .content a span, main .contact .content section .display a span, main section .display2 p span, main section .display2 .contact .content a span, main .contact .content section .display2 a span, main section .display3 p span, main section .display3 .contact .content a span, main .contact .content section .display3 a span, main section .display4 p span, main section .display4 .contact .content a span, main .contact .content section .display4 a span {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 2px 25px;
+}
+main section .flex-row, main section .flex-row3, main section .flex-row2 {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 80px;
+}
+main section .flex-row div, main section .flex-row3 div, main section .flex-row2 div {
+  max-width: 100%;
+}
+main section .flex-row div img, main section .flex-row3 div img, main section .flex-row2 div img {
+  width: 30vw;
+  border-radius: 0 50px 0 50px;
+}
+main section .flex-row2 {
+  gap: 80px;
+}
+main section .flex-row2 div {
+  max-width: 100%;
+}
+main section .flex-row2 div img {
+  width: 25vw;
+  height: 50vh;
+  border-radius: 0 50px 0 50px;
+}
+main section .flex-row2 div p, main section .flex-row2 div .contact .content a, main .contact .content section .flex-row2 div a {
+  text-align: center;
+  font-size: 30px;
+  color: #fff;
+}
+main section .flex-row3 {
+  gap: 80px;
   align-items: center;
 }
-main section .display .title {
-  text-align: center;
+main section .flex-row3 div {
+  max-width: 100%;
 }
-main section .display .tx-le {
-  text-align: center;
+main section .flex-row3 div img {
+  width: 25vw;
+  height: 50vh;
+  border-radius: 0 50px 0 50px;
 }
-main section .display .tx-le h3 {
-  font-size: 40px;
-  color: #6d6d6d;
+main section .flex-row3 div .second-image {
+  width: 30vw;
+  height: 40vh;
+  border-radius: 0 50px 0 50px;
 }
-main section .display .info {
-  text-align: center;
-  max-width: 70vw;
-  margin: 0 auto;
-  padding-top: 60px;
-  font-size: 15px;
-  letter-spacing: 0.4em;
-  line-height: 31px;
-}
-main section .title2 h2::after {
-  content: "学歴";
-}
-main section .mtop80, main section .mx-width1000 {
-  max-width: 1000px;
-  margin: 80px auto 0 auto;
-}
-main section .mtop80 .display2, main section .mx-width1000 .display2 {
-  text-align: left;
+main section .back-image {
   width: 100%;
+  height: 100%;
+  z-index: -100;
+  position: fixed;
+  top: 0;
 }
-main section .mtop80 .display2 table, main section .mx-width1000 .display2 table {
-  width: 100%;
-  padding-left: 100px;
-  border-collapse: collapse;
-}
-main section .mtop80 .display2 table tbody tr th, main section .mtop80 .display2 table tbody tr td, main section .mx-width1000 .display2 table tbody tr th, main section .mx-width1000 .display2 table tbody tr td {
-  border-bottom: solid 1px #ccc;
-}
-main section .mtop80 .display2 table tbody tr th, main section .mx-width1000 .display2 table tbody tr th {
-  width: 30%;
-  padding: 20px 0;
-}
-main section .mtop80 .display2 table tbody tr td, main section .mx-width1000 .display2 table tbody tr td {
-  width: 70%;
-  padding-left: 30px;
-}
-main section .title2 {
-  padding-top: 100px;
-  text-align: center;
-}
-main section .date {
-  text-align: center;
-  background-color: rgba(0, 192, 155, 0.6);
-}
-main section .date, main section .school {
-  border-bottom: 10px solid #fff !important;
-}
-
-.contact {
-  margin-top: 100px;
+main .contact {
   text-align: center;
   height: 50vh;
   position: relative;
+  margin-top: 80px;
 }
-.contact img {
+main .contact img {
   width: 100%;
   height: 50vh;
   -o-object-fit: cover;
@@ -267,7 +267,7 @@ main section .date, main section .school {
   -o-object-position: 50% 40%;
      object-position: 50% 40%;
 }
-.contact .content {
+main .contact .content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -275,24 +275,25 @@ main section .date, main section .school {
   background-color: rgba(255, 255, 255, 0);
   z-index: 100;
 }
-.contact .content p, .contact .content a {
+main .contact .content p, main .contact .content a {
   font-size: 25px;
   color: #fff;
   margin: 40px 0;
 }
-.contact .content a {
+main .contact .content a {
   padding: 20px 80px;
   border: 1px solid #fff;
   border-radius: 40px;
   transition: background-color 0.4s ease;
 }
-.contact .content a:hover {
+main .contact .content a:hover {
   background-color: #00C09B;
 }
 
 footer {
   padding-top: 50px;
   background-image: url(../img/footer_back.png);
+  background-color: #fff;
   background-repeat: no-repeat;
   background-position: bottom right;
   background-size: contain;
@@ -400,4 +401,4 @@ footer .copyright {
   text-align: center;
   padding: 20px 0;
   font-family: "Comic Sans MS";
-}/*# sourceMappingURL=about.css.map */
+}/*# sourceMappingURL=life.css.map */
