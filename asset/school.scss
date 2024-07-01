@@ -351,6 +351,13 @@ main{
                     object-fit: cover
                 }
             }
+            p{
+                span{
+                    background: linear-gradient(to top, $sub_color 10%, #ffffff 50%);
+                    // -webkit-background-clip: text;
+                    // -webkit-text-fill-color: transparent;
+                }
+            }
         }
 
         .schedule{

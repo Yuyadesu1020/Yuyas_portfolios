@@ -285,6 +285,9 @@ main section .row-right div img {
   -o-object-fit: cover;
      object-fit: cover;
 }
+main section .row-right p span, main section .row-right .contact .content a span, .contact .content main section .row-right a span {
+  background: linear-gradient(to top, #00C09B 10%, #ffffff 50%);
+}
 main section .schedule {
   margin: 100px auto 0 auto;
   display: flex;
