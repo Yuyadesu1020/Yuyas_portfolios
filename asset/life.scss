@@ -263,23 +263,55 @@ main{
             justify-content: center;
             gap: 50px;
             margin-top: 80px;
-            div{
-                max-width: 100%;
-                img{
-                    width: 30vw;
-                    border-radius: 0 50px 0 50px;
+            .first-image{
+                width: 28vw;
+                height: 35vh;
+                border-radius: 0 50px 0 50px;
+                background-image: url(../img/life_photo2.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                transition: all ease-in-out 0.7s;
+
+                &:hover{
+                    background-image: url(../img/life_photo17.jpg); 
                 }
             }
+            .second-image{
+                @extend .first-image;
+                background-image: url(../img/life_photo8.jpg);
+                &:hover{
+                    background-image: url(../img/life_photo18.jpg); 
+                }
+            }
+            .third-image{
+                @extend .first-image;
+                background-image: url(../img/life_photo6.jpg);
+                &:hover{
+                    background-image: url(../img/life_photo5.jpg); 
+                }
+            }
+                
         }
         .flex-row2{
             @extend .flex-row;
             gap: 80px;
             div{
-                max-width: 100%;
-                img{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .fourth-image{
                     width: 25vw;
                     height: 50vh;
                     border-radius: 0 50px 0 50px;
+                    background-image: url(../img/life_photo.jpg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center; 
+                    transition: all ease-in-out 0.7s;
+                    &:hover{
+                        background-image: url(../img/life_photo10.jpg); 
+                    }
                 }
                 p{
                     text-align: center;
@@ -287,33 +319,65 @@ main{
                     color: #fff;
                 }
             }
+            
+            .fifth-image{
+                @extend .fourth-image;
+                background-image: url(../img/life_photo3.jpg) !important;
+                &:hover{
+                    background-image: url(../img/life_photo16.jpg)!important; 
+                }
+            }
+            .sixth-image{
+                @extend .fourth-image;
+                background-image: url(../img/life_photo13.jpg) !important;
+                &:hover{
+                    background-image: url(../img/life_photo15.jpg)!important; 
+                }
+            }
         }
         .flex-row3{
             @extend .flex-row;
             gap: 80px;
             align-items: center;
-            div{
-                max-width: 100%;
-                img{
-                    width: 25vw;
-                    height: 50vh;
-                    border-radius: 0 50px 0 50px;
-                }
-                .second-image{
-                    width: 30vw;
-                    height: 40vh;
-                    border-radius: 0 50px 0 50px;
+            .seventh-image{
+                width: 25vw;
+                height: 50vh;
+                border-radius: 0 50px 0 50px;
+                background-image: url(../img/life_photo7.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                transition: all ease-in-out 0.7s;
+                &:hover{
+                    background-image: url(../img/life_photo4.jpg); 
                 }
             }
+            .eighth-image{
+                @extend .seventh-image;
+                width: 32vw;
+                height: 38vh;
+                background-image: url(../img/life_photo12.jpg);
+                background-size: contain;
+                &:hover{
+                    background-image: url(../img/life_photo14.jpg); 
+                }
+            }
+            .ninth-image{
+                @extend .seventh-image;
+                background-image: url(../img/life_photo9.jpg);
+                &:hover{
+                    background-image: url(../img/life_photo11.jpg); 
+                }
+            }
+        }
             
-        }
-        .back-image{
-            width: 100%;
-            height: 100%;
-            z-index: -100;
-            position: fixed;
-            top: 0;
-        }
+    }
+    .back-image{
+        width: 100%;
+        height: 100%;
+        z-index: -100;
+        position: fixed;
+        top: 0;
     }
 
     .contact{
