@@ -762,7 +762,7 @@ main .sub_hero div .sub2 {
     font-size: 13px;
     gap: 10px;
     align-items: center;
-    justify-content: start;
+    justify-content: left;
   }
 }
 @media screen and (max-width: 761px) {
